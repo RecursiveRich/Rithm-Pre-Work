@@ -1,0 +1,99 @@
+Nested Objects Exercises
+
+https://www.rithmschool.com/courses/intermediate-javascript/javascript-nested-data-structures-objects
+
+function displayCities(){
+	var arr = instructorData.additionalData.moreDetails.citiesLivedIn;
+	for(var i = 0; i < arr.length; i++){
+		console.log(arr[i]);
+	} 	
+}
+
+function displayHometownData(){
+	var obj = instructorData.additionalData.moreDetails.hometown;
+	for(var key in obj){
+		console.log( obj[key] );
+	}
+}
+
+function addDetail(key, value){
+	var obj = instructorData.additionalData.moreDetails;
+	obj[key] = value;
+	return obj;
+}
+
+function removeDetail(key){
+	var obj = instructorData.additionalData.moreDetails;
+	delete obj[key]
+	return obj;
+};
+
+
+Using a for loop, console.log all of the numbers in the primeNumbers array.
+
+function logPrime(){
+	for(var i=0; i < 5; i++){
+		console.log( nestedData.innerData.numberData.primeNumbers[i] );
+	}
+}
+
+Using a for loop, console.log all of the even Fibonnaci numbers.
+
+function logFib() {
+	var arr = nestedData.innerData.numberData.fibonnaci;
+	for(var i = 0; i < arr.length; i++) {
+		if ( arr[i] % 2 === 0 ) console.log( arr[i] );
+	}
+}
+
+Console.log the value "second" inside the order array.
+
+console.log( nestedData.innerData.order[1] ) ;
+
+Invoke the addSnack function and add the snack "chocolate".
+
+nestedData.innerData.addSnack("chocolate");
+
+Inside of the addSnack function there is a special keyword called this. What does the word this refer to inside the addSnack function?
+
+The closest parent object, namely innerData
+
+---------
+
+Write a function addSpeaker to add a speaker to the array of speakers. The speaker you add must be an object with a key of name and a value of whatever you'd like.
+
+function addSpeaker(fName) {
+	nestedObject.speakers.push( {name: fName} );
+}
+
+Write a function addLanguage that adds a language to the languages object. The language object you add should have a key with the name of the language and the value of another object with a key of "hello" and a value of however you spell "hello" in the language you add.
+
+function addLanguage(key, word) {
+	nestedObject.data.languages[key] = {hello: word};
+}
+
+Write a function addCountry that adds a European country to the countries object (inside of the continents object, inside of the countries object). The country you add should be an object with the key as name of the country and the value as an object with the keys of "capital" and "population" and their respective values.
+
+function addCountry(name, cap, pop){
+	nestedObject.data.continents.europe.countries[name] = {capital: cap, population: pop} ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

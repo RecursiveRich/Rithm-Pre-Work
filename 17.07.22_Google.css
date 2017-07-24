@@ -1,0 +1,10 @@
+footer {
+	background-color: Gainsboro;
+
+}
+
+/*Can't seem to select only three anchor tags to text-align the last three to the right*/
+
+body a {
+	text-align: right;
+}
