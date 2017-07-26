@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <section id="container">
+        <ul>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ul>
+        <ol>
+            <li class="first">one</li>
+            <li class="second">two</li>
+            <li class="third">three</li>
+        </ol>
+    </section>
+    <div class="footer">
+    </div>
+    <script>
+
+// Select the section with an id of container without using querySelector.
+var container = document.getElementById("container")
+
+// Select the section with an id of container using querySelector.
+var container = document.querySelector('#container')
+
+// Select all of the list items with a class of "second".
+var secondInEachList = document.querySelectorAll('.second');
+var again = document.getElementsByClassName('second');
+
+// Select a list item with a class of third, but only the list item inside of the ol tag.
+var thirdOL = document.querySelectorAll('.third')[1]; // My answer
+var again2 = document.querySelector('ol .third');  // Rithm answer
+
+// Give the section with an id of container the text "Hello!".
+container.innerText = "Hello!";
+
+// Add the class main to the div with a class of footer.
+var footerDiv = document.querySelector('.footer');
+footerDiv.classList.add('main') // <div class="footer main"></div>
+
+// Remove the class main on the div with a class of footer.
+footerDiv.classList.remove('main')
+
+// Create a new li element.
+var newLi = document.createElement('li');
+
+// Give the li the text "four".
+newLi.innerText = "four";
+
+// Append the li to the ul element.
+var theUL = document.querySelector('ul')
+
+theUL.appendChild(newLi)
+
+// Loop over all of the lis inside the ol tag and give them a background color of "green".
+
+var theOLList = document.querySelectorAll('ol li');
+for(let i = 0; i < theOLList.length; i++) {
+    theOLList[i].style.backgroundColor = "green";
+}
+
+// Remove the div with a class of footer.
+var footerDiv = document.querySelector('.footer');
+var body = document.querySelector('body');
+body.removeChild(footerDiv)
+
+    </script>
+</body>
+</html>  
