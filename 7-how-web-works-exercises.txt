@@ -1,0 +1,33 @@
+﻿How the Web Works (Exercises) 8-14-17
+
+
+1. Http is the protocol governing how computers communicate over the internet (vs ftp or email)
+2. Uniform resource locator: human readable web address
+3. TCP is the protocol for making sure all packets sent have arrived (like signing for a Fedex shipment)
+4. Internet Protocol
+5. Domain name system: Looks up ip address corresponding to URL
+6. Idempotent: a request that makes no change to the server 
+7. Query string is the part of the URL beginning with ? that contains key-value parameters
+8. The specific file on the server being requested
+9. Get - just requesting data, like a home page.  
+Post - changing server eg logging in with a password or creating an account 
+Head - just requesting header eg to make sure url still active 
+Delete - delete data from server
+1. client is the requesting computer
+2. server is the responding computer
+3. Http request is the request sent by the client per http protocol
+4. Http response is sent by the server
+5. Http header is part of an http response or request that gives basic information, separate from the body:
+e.g. ip address for the client, http verb for the reqeust
+        e.g. status code, date, content type (e.g. text/html)
+1. REST is a stateless, scalable architecture for building applications that communicate with other applications
+2. JSON is javascript object notation: key-value pairs of strings
+3. an http request is sent to the service provider
+        DNS determines the IP address
+        the request is routed through a number of routers until it reaches the server
+        the server formulates a response and sends it back to the client
+        the client's browser renders the html into a DOM and sends additional requests for img 
+files, script files, etc. 
+1. Stateless means that the server does not need to retain data about a previous request.
+2. cURL is an application to send http requests from the command line
+3. curl http://omdapi.com?t=titanic
