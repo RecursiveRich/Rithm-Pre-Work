@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vanilla JS To Do App</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+	<style>
+		.done {
+			text-decoration: line-through;
+		}
+
+		.hide {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<form action="/gosomewhereelse">
+  			<input type="text" name="todo-data" placeholder="To Do Item" id="todo">
+  			<input type="submit" value="Submit">
+		</form> 
+    </div>
+    <div>
+    	<ul id="todo-list">
+    	</ul>
+    </div>
+</form>
+<script>
+	// grab form
+	// do "on submit"
+	// prevent default behavior (which refreshes the page or goes somewhere)
+	// grab the value
+	// do something with the value
+		// create an li
+		// set its text to the value
+		// append the li to the body or div
+
+	var form = document.querySelector('form')
+	form.addEventListener('submit', function(e){
+		e.preventDefault();
+		var inputText = document.querySelector('#todo').value;  
+		document.querySelector('#todo').value = '';		// Reset the input field to be blank
+		var li = document.createElement('li');	
+		li.innerText = inputText;
+		var button = document.createElement('button');
+		button.innerText = "Delete";
+		button.addEventListener('click', e => e.target.parentElement.remove());
+		li.appendChild(button);
+		document.querySelector('#todo-list').appendChild(li);
+	})
+
+	document.querySelector('#todo-list').addEventListener('click', function(e){
+		e.target.style.textDecoration = 'line-through';
+	})
+
+
+	// jQuery TO DO LIST
+	// $("form").submit(function(e) {	// aka .on(submit, function(){})
+	// 	e.preventDefault();			// hey browser, don't send the post request, which is what you do normally
+
+	// 	var inputText = $('#todo').val();
+	// 	$('#todo').val('');
+	// 	$('#todo-list').append('<li><span>' + inputText + '</span><button type="submit" value="Delete">Delete</button></li>');
+
+	// 	// var $newLi = $("<li>");		// e is the browser event object, or in this case, jQuery event object
+	// 	// $newLi.text(e.val())
+	// 	// $("#todo-list").append($newLi)
+	// 	// $(e.target).hide();   // jQuery sets display to none
+	// });
+	
+	// $('#todo-list').on('click','span', function(e){
+	// 	$(e.target).toggleClass("done");
+	// })
+
+	// $('#todo-list').on('click','button', function(e){
+	// 	$(e.target).parent().toggleClass("hide");		// or .remove()  
+	// })
+</script>
+</body>
+</html>
