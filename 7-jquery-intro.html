@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Exercise</title>
+    <script src="http://cdn.jquerytools.org/1.2.6/full/jquery.tools.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1 id="welcome"></h1>
+        <div class="list-container">
+            <ul class="nav">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">About Us</li>
+                <li class="nav-item">Contact</li>
+                <li class="nav-item">Careers</li>
+                <li class="nav-item">Apply</li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-nav">
+                <li class="footer-nav-item">Learn More</li>
+                <li class="footer-nav-item">Blog</li>
+                <li class="footer-nav-item">Email Us</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script>
+// What is jQuery? What does it enable you to do?
+//   jQuery is a JS library used to manipulate the DOM and handle AJAX requests efficiently
+// What is the difference between a jQuery object and HTML Element?
+//   A jQuery object has it's own syntax and properties, distinct (though often similar) to those of an HTML Element
+// What does the $ represent in jQuery?
+//   $ is an alias for the jQuery function which is used to select element from the DOM and turn them into jQuery objects for manipulation
+
+$(function(){
+    var $footer = $("footer")
+    var $container = $("#container")
+    var $nav = $("ul.nav li")
+    var $thirdLi = $("div.list-container li:nth-of-type(3)")
+    var $lastLis = $("ul li:last-child")
+})
+
+
+</script>
+</html>

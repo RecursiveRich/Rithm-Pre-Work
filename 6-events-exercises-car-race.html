@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			border: 2px solid black;
+			margin-top: 80px;
+			margin-left: 0px;
+			width: 300px;
+			height: 200px;
+		}
+		#car1 {
+			background-color: blue;
+		}
+		#car2 {
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<button>Start the race!</button>
+	<div id="car1"></div>
+	<div id="car2"></div>
+	<div id="container"></div>
+ 	<script>
+			document.addEventListener("DOMContentLoaded", function(){
+				alert("Loaded");
+				var button = document.querySelector('button');
+				var car1 = document.querySelector('#car1')
+				var car2 = document.querySelector('#car2')
+				button.addEventListener("click", function(){
+					alert("Here we go!");
+					car1.style.marginLeft = 0;
+					car2.style.marginLeft = 0;
+						let timer = setInterval(function(){
+							car1.style.marginLeft = parseInt(car1.style.marginLeft) + 
+								Math.random()*100 + 'px';
+							car2.style.marginLeft = parseInt(car2.style.marginLeft) + 
+								Math.random()*100 + 'px';
+							if (parseInt(car1.style.marginLeft)+300 > window.innerWidth || parseInt(car2.style.marginLeft)+300 > window.innerWidth){
+									clearInterval(timer);
+							}
+						},100);
+				});
+			});
+    </script>
+</body>
+</html>
+
